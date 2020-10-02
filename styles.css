@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+body {
+  margin: 0;
+}
+
+#story {
+  padding: 50px;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+[id^="polaroid"] {
+  display: none;
+  background: beige;
+  margin: 0;
+  padding: 20px;
+  box-shadow: 10px 10px 10px gray;
+  position: absolute;
+}
+
+.show {
+  display: block;
+}
+
+[id^="polaroid"] img {
+  width: 300px;
+  height: 300px;
+  border: 1px solid white;
+  overflow: hidden;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+[id^="polaroid"] figcaption {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2em;
+  font-family: 'Permanent Marker', cursive;
+  pointer-events: none;
+}
+
+[class*="rotate"] {
+  transition: 1s;
+  opacity: 0;
+  z-index: 10;
+}
+.rotate-right {
+  transform: rotate(30deg) scale(0.8);
+  margin-left: 400px;
+}
+.rotate-left {
+  transform: rotate(-30deg) scale(0.8);
+  margin-left: -400px;
+}
+.rotate-up {
+  transform: rotate(5deg) scale(0.8);
+  margin-top: -400px;
+}
+.rotate-down {
+  transform: rotate(-5deg) scale(0.8);
+  margin-top: 400px;
+}
