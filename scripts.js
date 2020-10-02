@@ -3,8 +3,8 @@ const polas = document.querySelectorAll("[id^='polaroid']");
 const nextId = (c, d) => {
   let n = 0;
   switch(c) {
-    case 1: n=2; break;
-    case 2: d=="left" ? n=3 : n=4; break;
+    case 1: n=2; break; // no matter where we go 2 is next
+    case 2: d=="left" ? n=3 : n=4; break; // left defines the good path
     case 3: d=="left" ? n=5 : n=6; break;
     case 4: d=="left" ? n=7 : n=8; break;
     case 5: n=3; break;
@@ -18,6 +18,7 @@ const nextId = (c, d) => {
 
 
 const move = (ev, dir) => {
+  console.log(`Swiping ${dir}`);
   let cId = "";
   if(ev.target.id) {
     cId = ev.target.id;
